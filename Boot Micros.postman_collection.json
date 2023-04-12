@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "c7d6e85a-0911-4612-be81-58be7031adb2",
+		"name": "Boot Micros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Sony TV 3000\",\r\n    \"quantity\": 10,\r\n    \"price\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10001/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10001",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PlaceOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\" : 1,\r\n    \"quantity\": 2,\r\n    \"totalAmount\": 2468,\r\n    \"paymentMode\": \"PAYPAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10002/order/placeOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10002",
+					"path": [
+						"order",
+						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\" : 1,\r\n    \"quantity\": 2,\r\n    \"totalAmount\": 2468,\r\n    \"paymentMode\": \"PAYPAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10001/product/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10001",
+					"path": [
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
