@@ -45,3 +45,23 @@ target/
 /ProductService/!**/src/test/**/target/
 /ProductService/ProductService/.mvn/wrapper/maven-wrapper.jar
 /ProductService/.mvn/*
+
+# Ignore service-registry specific files
+/service-registry/target/
+/service-registry/bin/
+/service-registry/out/
+/service-registry/.mvn/wrapper/maven-wrapper.jar
+/service-registry/.mvn/wrapper/maven-wrapper.properties
+/service-registry/.idea/
+/service-registry/*.iml
+/service-registry/.idea/workspace.xml
+/service-registry/.idea/tasks.xml
+/service-registry/.idea/modules.xml
+/service-registry/.idea/*.iml
+/service-registry/.idea/misc.xml
+/service-registry/.mvn/wrapper/maven-wrapper.jar
+/service-registry/!.mvn/wrapper/maven-wrapper.jar
+/service-registry/!**/src/main/**/target/
+/service-registry/!**/src/test/**/target/
+/service-registry/service-registry/.mvn/wrapper/maven-wrapper.jar
+/service-registry/.mvn/*
