@@ -1,6 +1,7 @@
 package com.tudux.ProductService.service;
 
 import com.tudux.ProductService.entity.Product;
+import com.tudux.ProductService.exception.ProductServiceCustomException;
 import com.tudux.ProductService.model.ProductRequest;
 import com.tudux.ProductService.model.ProductResponse;
 import com.tudux.ProductService.repository.ProductRepository;
@@ -36,7 +37,8 @@ public class ProductServiceImpl implements ProductService{
         log.info("Get the product for id: {}", productId);
         Product product
                 = productRepository.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Product with given id not found"));
+                .orElseThrow(() ->
+                        new ProductServiceCustomException("Product with given id not found", "PRODUCT_NOT_FOUND"));
         ProductResponse productResponse = new ProductResponse();
 
         copyProperties(product,productResponse);
