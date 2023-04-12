@@ -1,0 +1,47 @@
+# Ignore target directory
+target/
+
+# Ignore IDE-specific files
+*.iml
+.idea/
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/modules.xml
+/.idea/*.iml
+/.idea/misc.xml
+
+# Ignore build output
+/bin/
+/build/
+/out/
+
+# Ignore Spring Boot application properties files
+/application*.yml
+/application*.properties
+
+# Ignore log files
+*.log
+
+# Ignore Maven wrapper files
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+
+# Ignore ProductService specific files
+/ProductService/target/
+/ProductService/bin/
+/ProductService/out/
+/ProductService/.mvn/wrapper/maven-wrapper.jar
+/ProductService/.mvn/wrapper/maven-wrapper.properties
+/ProductService/.idea/
+/ProductService/*.iml
+/ProductService/.idea/workspace.xml
+/ProductService/.idea/tasks.xml
+/ProductService/.idea/modules.xml
+/ProductService/.idea/*.iml
+/ProductService/.idea/misc.xml
+/ProductService/.mvn/wrapper/maven-wrapper.jar
+/ProductService/!.mvn/wrapper/maven-wrapper.jar
+/ProductService/!**/src/main/**/target/
+/ProductService/!**/src/test/**/target/
+/ProductService/ProductService/.mvn/wrapper/maven-wrapper.jar
+/ProductService/.mvn/*

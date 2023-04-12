@@ -1,0 +1,5 @@
+docker exec -it micro-productdb bash
+
+mysql -u root -p
+use productdb;
+select * from product;

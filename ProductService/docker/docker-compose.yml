@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    db-product:
+        image: mysql
+        container_name: micro-productdb
+        ports:
+            - "3306:3306"
+        command: --init-file /sql/init.sql
+        volumes:
+            - ./sql/init.sql:/sql/init.sql            
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_HOST: '%'
