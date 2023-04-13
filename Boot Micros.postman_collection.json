@@ -34,13 +34,49 @@
 			"response": []
 		},
 		{
+			"name": "ReduceQuantity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Sony TV 3000\",\r\n    \"quantity\": 10,\r\n    \"price\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10001/product/reduceQuantity/2?quantity=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10001",
+					"path": [
+						"product",
+						"reduceQuantity",
+						"2"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "PlaceOrder",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"productId\" : 1,\r\n    \"quantity\": 2,\r\n    \"totalAmount\": 2468,\r\n    \"paymentMode\": \"PAYPAL\"\r\n}",
+					"raw": "{\r\n    \"productId\" : 1,\r\n    \"quantity\": 1,\r\n    \"totalAmount\": 1234,\r\n    \"paymentMode\": \"PAYPAL\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +116,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:10001/product/2",
+					"raw": "http://localhost:10001/product/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -88,7 +124,7 @@
 					"port": "10001",
 					"path": [
 						"product",
-						"2"
+						"1"
 					]
 				}
 			},
