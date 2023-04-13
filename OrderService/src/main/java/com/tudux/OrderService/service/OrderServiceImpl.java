@@ -1,6 +1,7 @@
 package com.tudux.OrderService.service;
 
 import com.tudux.OrderService.entity.Order;
+import com.tudux.OrderService.external.client.ProductService;
 import com.tudux.OrderService.model.OrderRequest;
 import com.tudux.OrderService.repository.OrderRepository;
 import lombok.extern.log4j.Log4j2;
@@ -15,10 +16,17 @@ public class OrderServiceImpl implements OrderService{
 
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private ProductService productService;
+
     @Override
     public long placeOrder(OrderRequest orderRequest) {
         log.info("Placing Order Request {}", orderRequest);
 
+        productService.reduceQuantity(orderRequest.getProductId(),orderRequest.getQuantity());
+
+        log.info("Order Places successfully with Order Id {}");
         Order order = Order.builder()
                 .amount(orderRequest.getTotalAmount())
                 .orderStatus("CREATED")
