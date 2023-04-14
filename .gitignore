@@ -66,25 +66,25 @@ target/
 /service-registry/service-registry/.mvn/wrapper/maven-wrapper.jar
 /service-registry/.mvn/*
 
-# Ignore OrderService specific files
-/OrderService/target/
-/OrderService/bin/
-/OrderService/out/
-/OrderService/.mvn/wrapper/maven-wrapper.jar
-/OrderService/.mvn/wrapper/maven-wrapper.properties
-/OrderService/.idea/
-/OrderService/*.iml
-/OrderService/.idea/workspace.xml
-/OrderService/.idea/tasks.xml
-/OrderService/.idea/modules.xml
-/OrderService/.idea/*.iml
-/OrderService/.idea/misc.xml
-/OrderService/.mvn/wrapper/maven-wrapper.jar
-/OrderService/!.mvn/wrapper/maven-wrapper.jar
-/OrderService/!**/src/main/**/target/
-/OrderService/!**/src/test/**/target/
-/OrderService/OrderService/.mvn/wrapper/maven-wrapper.jar
-/OrderService/.mvn/*
+# Ignore PaymentService specific files
+/PaymentService/target/
+/PaymentService/bin/
+/PaymentService/out/
+/PaymentService/.mvn/wrapper/maven-wrapper.jar
+/PaymentService/.mvn/wrapper/maven-wrapper.properties
+/PaymentService/.idea/
+/PaymentService/*.iml
+/PaymentService/.idea/workspace.xml
+/PaymentService/.idea/tasks.xml
+/PaymentService/.idea/modules.xml
+/PaymentService/.idea/*.iml
+/PaymentService/.idea/misc.xml
+/PaymentService/.mvn/wrapper/maven-wrapper.jar
+/PaymentService/!.mvn/wrapper/maven-wrapper.jar
+/PaymentService/!**/src/main/**/target/
+/PaymentService/!**/src/test/**/target/
+/PaymentService/PaymentService/.mvn/wrapper/maven-wrapper.jar
+/PaymentService/.mvn/*
 
 
 # Ignore OrderService specific files

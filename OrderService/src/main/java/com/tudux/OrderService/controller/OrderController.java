@@ -1,7 +1,9 @@
 package com.tudux.OrderService.controller;
 
 import com.tudux.OrderService.model.OrderRequest;
+import com.tudux.OrderService.model.OrderResponse;
 import com.tudux.OrderService.service.OrderService;
+import lombok.Generated;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,5 +23,14 @@ public class OrderController {
         long orderId = orderService.placeOrder(orderRequest);
         log.info("Order Id: {}", orderId);
         return new ResponseEntity<>(orderId, HttpStatus.OK);
+    }
+
+    @GetMapping("/{orderId}")
+    public ResponseEntity<OrderResponse> getOrderDetails(@PathVariable("orderId") long orderId) {
+        OrderResponse orderResponse =
+                orderService.getOrderDetails(orderId);
+        return new ResponseEntity<>(orderResponse,
+                HttpStatus.OK);
+
     }
 }
