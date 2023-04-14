@@ -14,3 +14,9 @@ services:
             MYSQL_USER: user
             MYSQL_PASSWORD: root
             MYSQL_ROOT_HOST: '%'
+
+    zipkin:
+        image: openzipkin/zipkin
+        container_name: zipkin-micro-test
+        ports:
+        - "9411:9411"            
