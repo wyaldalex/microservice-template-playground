@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionDetailsRepository extends JpaRepository<TransactionDetails, Long> {
-
+    TransactionDetails findByOrderId(long OrderId);
 }

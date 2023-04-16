@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c7d6e85a-0911-4612-be81-58be7031adb2",
+		"_postman_id": "41b6ffeb-6f92-449c-878d-1d20841054d6",
 		"name": "Boot Micros",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3969544"
 	},
 	"item": [
 		{
@@ -93,6 +94,38 @@
 					"path": [
 						"order",
 						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\" : 1,\r\n    \"quantity\": 1,\r\n    \"totalAmount\": 1234,\r\n    \"paymentMode\": \"PAYPAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10002/order/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10002",
+					"path": [
+						"order",
+						"1"
 					]
 				}
 			},

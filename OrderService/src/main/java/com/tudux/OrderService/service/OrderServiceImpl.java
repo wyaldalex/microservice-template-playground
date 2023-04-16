@@ -5,6 +5,7 @@ import com.tudux.OrderService.exception.CustomException;
 import com.tudux.OrderService.external.client.PaymentService;
 import com.tudux.OrderService.external.client.ProductService;
 import com.tudux.OrderService.external.client.request.PaymentRequest;
+import com.tudux.OrderService.external.response.PaymentResponse;
 import com.tudux.OrderService.model.OrderRequest;
 import com.tudux.OrderService.model.OrderResponse;
 import com.tudux.OrderService.model.ProductResponse;
@@ -91,10 +92,25 @@ public class OrderServiceImpl implements OrderService{
                 ProductResponse.class
         );
 
+        log.info("Invoking Order Service to fetch info for Order Id {} ", order.getId());
+        PaymentResponse paymentResponse = restTemplate.getForObject(
+                "http://PAYMENT-SERVICE/payment/order/" + orderId,
+                PaymentResponse.class
+        );
+
         OrderResponse.ProductDetails productDetails =
                 OrderResponse.ProductDetails.builder()
                         .productName(productResponse.getProductName())
                         .productId(productResponse.getProductId())
+                        .build();
+
+
+        OrderResponse.PaymentDetails paymentDetails =
+                OrderResponse.PaymentDetails.builder()
+                        .paymentId(paymentResponse.getPaymentId())
+                        .paymentStatus(paymentResponse.getStatus())
+                        .paymentDate(paymentResponse.getPaymentDate())
+                        .paymentMode(paymentResponse.getPaymentMode())
                         .build();
 
         OrderResponse orderResponse =
@@ -104,6 +120,7 @@ public class OrderServiceImpl implements OrderService{
                         .amount(order.getAmount())
                         .orderDate(order.getOrderDate())
                         .productDetails(productDetails)
+                        .paymentDetails(paymentDetails)
                         .build();
 
         return orderResponse;
