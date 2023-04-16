@@ -126,3 +126,23 @@ target/
 /ConfigServer/!**/src/test/**/target/
 /ConfigServer/ConfigServer/.mvn/wrapper/maven-wrapper.jar
 /ConfigServer/.mvn/*
+
+# Ignore CloudGateway specific files
+/CloudGateway/target/
+/CloudGateway/bin/
+/CloudGateway/out/
+/CloudGateway/.mvn/wrapper/maven-wrapper.jar
+/CloudGateway/.mvn/wrapper/maven-wrapper.properties
+/CloudGateway/.idea/
+/CloudGateway/*.iml
+/CloudGateway/.idea/workspace.xml
+/CloudGateway/.idea/tasks.xml
+/CloudGateway/.idea/modules.xml
+/CloudGateway/.idea/*.iml
+/CloudGateway/.idea/misc.xml
+/CloudGateway/.mvn/wrapper/maven-wrapper.jar
+/CloudGateway/!.mvn/wrapper/maven-wrapper.jar
+/CloudGateway/!**/src/main/**/target/
+/CloudGateway/!**/src/test/**/target/
+/CloudGateway/CloudGateway/.mvn/wrapper/maven-wrapper.jar
+/CloudGateway/.mvn/*

@@ -117,12 +117,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:10002/order/1",
+					"raw": "http://localhost:10909/order/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "10002",
+					"port": "10909",
 					"path": [
 						"order",
 						"1"
@@ -149,12 +149,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:10001/product/1",
+					"raw": "http://localhost:10909/product/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "10001",
+					"port": "10909",
 					"path": [
 						"product",
 						"1"
