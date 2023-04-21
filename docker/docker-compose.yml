@@ -27,6 +27,41 @@ services:
         container_name: zipkin-micro-test
         ports:
         - "9411:9411"
+    #Custom Images    
+    serviceregistry:
+        image: 'comtudux/service-registry-mise:0.0.1'
+        container_name: serviceregistry
+        ports:
+        - '8761:8761'
+    configserver:
+        image: 'comtudux/config-server-mise:0.0.1'
+        container_name: configserver
+        ports:
+        - '9296:9296'
+        environment:
+        - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://configserver:9296/actuator/health"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        depends_on:
+        - serviceregistry
+    cloudgateway:
+        image: 'comtudux/api-gateway-mise:0.0.1'
+        container_name: cloudgateway
+        ports:
+        - '10909:10909'
+        environment:
+        - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+        - CONFIG_SERVER_URL=http://configserver:9296
+        - ISSUER_URI=${ISSUER_URI:-http://localhost:8080}
+        - AUDIENCE=${AUDIENCE:-my-audience}
+        - CLIENT_ID=${CLIENT_ID:-my-client-id}
+        - CLIENT_SECRET=${CLIENT_SECRET:-my-client-secret}
+        depends_on:
+            configserver:
+                condition: service_healthy        
 
 volumes:
   redis_data:                      
