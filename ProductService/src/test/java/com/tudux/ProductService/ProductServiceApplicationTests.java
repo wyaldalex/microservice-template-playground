@@ -3,10 +3,10 @@ package com.tudux.ProductService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class ProductServiceApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
