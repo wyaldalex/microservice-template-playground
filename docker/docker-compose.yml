@@ -61,7 +61,56 @@ services:
         - CLIENT_SECRET=${CLIENT_SECRET:-my-client-secret}
         depends_on:
             configserver:
-                condition: service_healthy        
+                condition: service_healthy
+    product-microservice:
+        image: 'comtudux/product-mise:0.0.1'
+        container_name: product-microservice
+        ports:
+        - '10001:10001'
+        environment:
+        - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+        - CONFIG_SERVER_URL=http://configserver:9296
+        - ISSUER_URI=${ISSUER_URI:-http://localhost:8080}
+        - AUDIENCE=${AUDIENCE:-my-audience}
+        - CLIENT_ID=${CLIENT_ID:-my-client-id}
+        - CLIENT_SECRET=${CLIENT_SECRET:-my-client-secret}
+        - DB_HOST=db-product
+        depends_on:
+            configserver:
+                condition: service_healthy
+    payment-microservice:
+        image: 'comtudux/payment-mise:0.0.1'
+        container_name: payment-microservice
+        ports:
+        - '10003:10003'
+        environment:
+        - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+        - CONFIG_SERVER_URL=http://configserver:9296
+        - ISSUER_URI=${ISSUER_URI:-http://localhost:8080}
+        - AUDIENCE=${AUDIENCE:-my-audience}
+        - CLIENT_ID=${CLIENT_ID:-my-client-id}
+        - CLIENT_SECRET=${CLIENT_SECRET:-my-client-secret}
+        - DB_HOST=db-product
+        depends_on:
+            configserver:
+                condition: service_healthy
+    order-microservice:
+        image: 'comtudux/order-mise:0.0.1'
+        container_name: order-microservice
+        ports:
+        - '10002:10002'
+        environment:
+        - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+        - CONFIG_SERVER_URL=http://configserver:9296
+        - ISSUER_URI=${ISSUER_URI:-http://localhost:8080}
+        - AUDIENCE=${AUDIENCE:-my-audience}
+        - CLIENT_ID=${CLIENT_ID:-my-client-id}
+        - CLIENT_SECRET=${CLIENT_SECRET:-my-client-secret}
+        - DB_HOST=db-product
+        depends_on:
+            configserver:
+                condition: service_healthy                                  
+                                        
 
 volumes:
   redis_data:                      
