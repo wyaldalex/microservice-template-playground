@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: my-namespace2
+  name: service-registry-app
+spec:
+  selector:
+    matchLabels:
+      app: service-registry-app
+  template:
+    metadata:
+      labels:
+        app: service-registry-app
+    spec:
+      containers:
+      - name: service-registry-app
+        image: comtudux/service-registry-mise:0.0.1
+        ports:
+        - containerPort: 8761
