@@ -22,7 +22,17 @@ spec:
             valueFrom:
               configMapKeyRef:
                 key: eureka_service_address
-                name: eureka-cm      
+                name: eureka-cm
+          - name: ISSUER_URI
+            valueFrom:
+              configMapKeyRef:
+                name: issuer-uri-cm
+                key: issuer_uri
+          - name: AUDIENCE
+            valueFrom:
+              configMapKeyRef:
+                name: audience-cm
+                key: audience                      
 
 ---
 

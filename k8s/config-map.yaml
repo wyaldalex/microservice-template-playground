@@ -5,3 +5,59 @@ metadata:
 data:
   #eureka_service_address: "%EUREKA_SERVER_ADDRESS%"
   eureka_service_address: http://eureka-0.eureka:8761/eureka
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-cm
+data:
+  config_url: "http://config-service-svc"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: issuer-uri-cm
+data:
+  issuer_uri: "xxxxxxxx"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: audience-cm
+data:
+  audience: "api://default"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: client-id-cm
+data:
+  client_id: "xxxxxx"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: client-secret-cm
+data:
+  client_secret: "xxxxxx"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-cm
+data:
+  hostname: "xxxxxx"        
+
+
