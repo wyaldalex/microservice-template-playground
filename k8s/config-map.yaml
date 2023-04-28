@@ -22,7 +22,7 @@ kind: ConfigMap
 metadata:
   name: issuer-uri-cm
 data:
-  issuer_uri: "xxxxxxxx"
+  issuer_uri: "XXXXXXXXX"
 
 ---
 
@@ -40,7 +40,7 @@ kind: ConfigMap
 metadata:
   name: client-id-cm
 data:
-  client_id: "xxxxxx"
+  client_id: "XXXXXXXXX"
 
 ---
 
@@ -49,7 +49,7 @@ kind: ConfigMap
 metadata:
   name: client-secret-cm
 data:
-  client_secret: "xxxxxx"
+  client_secret: "XXXXXXXXX"
 
 ---
 
@@ -58,6 +58,6 @@ kind: ConfigMap
 metadata:
   name: mysql-cm
 data:
-  hostname: "xxxxxx"        
+  hostname: "mysql-0.mysql"        
 
 

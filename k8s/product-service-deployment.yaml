@@ -16,7 +16,7 @@ spec:
         image: comtudux/product-mise:0.0.1
         imagePullPolicy: Never
         ports:
-        - containerPort: 10002
+        - containerPort: 10001
         env:
           - name: CONFIG_SERVER_URL
             valueFrom:
@@ -64,5 +64,5 @@ spec:
     app: product-service-app
   ports:
   - port: 80
-    targetPort: 10002
+    targetPort: 10001
         

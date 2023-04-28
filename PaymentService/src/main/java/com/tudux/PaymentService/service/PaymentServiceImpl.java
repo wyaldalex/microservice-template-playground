@@ -42,9 +42,12 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PaymentResponse getPaymentDetailsByOrderId(String orderId) {
         log.info("Getting payment details for orderId: {}", orderId);
+        log.info("Transaction Retrieval Start for: {}", orderId);
 
         TransactionDetails transactionDetails =
                 transactionDetailsRepository.findByOrderId(Long.valueOf(orderId));
+
+        log.info("Transaction Obtained: {}", transactionDetails.toString());
 
         PaymentResponse paymentResponse = PaymentResponse.builder()
                 .paymentId(transactionDetails.getId())

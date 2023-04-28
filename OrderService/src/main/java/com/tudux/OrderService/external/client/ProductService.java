@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@CircuitBreaker(name = "external", fallbackMethod = "fallback")
-@FeignClient(name = "PRODUCT-SERVICE/product")
+//@CircuitBreaker(name = "external", fallbackMethod = "fallback")
+@FeignClient(name = "product", url = "${microservice.product}")
 public interface ProductService {
 
     @PutMapping("/reduceQuantity/{id}")
@@ -18,10 +18,10 @@ public interface ProductService {
             @RequestParam long quantity
     );
 
-    default void fallback(Exception e) {
-        throw new CustomException("Payment Service is not available",
-                "UNAVAILABLE",
-                500
-        );
-    }
+//    default void fallback(Exception e) {
+//        throw new CustomException("Payment Service is not available",
+//                "UNAVAILABLE",
+//                500
+//        );
+//    }
 }
